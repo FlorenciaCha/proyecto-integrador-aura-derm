@@ -1,0 +1,87 @@
+/* Contenedor del formulario centrado en la pantalla */
+.formulario {
+    display: flex;
+    flex-direction: column;
+    max-width: 26rem;
+    margin: 4rem auto; /* Lo centra horizontalmente en la pantalla */
+    padding: 2rem;
+    background-color: #ffffff;
+    border: 1px solid var(--color-secundario);
+    border-radius: 12px;
+    gap: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    font-family: 'Helvetica', sans-serif;
+}
+
+/* Título interno */
+.formulario h3 {
+    color: var(--color-terciario);
+    text-align: center;
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+}
+
+/* Bloques contenedores de cada campo */
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+/* Etiquetas del formulario */
+.campo label {
+    font-weight: bold;
+    color: #555555;
+    font-size: 0.9rem;
+}
+
+/* Estilo para los inputs de texto y número */
+.inputControl {
+    padding: 0.6rem 0.8rem;
+    border: 1.5px solid var(--color-terciario); /* Bordes del color del footer */
+    border-radius: 6px;
+    font-family: 'Helvetica', sans-serif;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+
+.inputControl:focus {
+    border-color: var(--color-primario);
+    box-shadow: 0 0 0 3px rgba(175, 192, 174, 0.3);
+}
+
+
+.inputFile {
+    font-family: 'Helvetica', sans-serif;
+    font-size: 0.9rem;
+    padding: 0.4rem 0;
+}
+
+/* El botón de envío solicitado */
+.botonSubmit {
+    background-color: var(--color-terciario); 
+    color: #ffffff;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 6px;
+    font-family: 'Helvetica', sans-serif; 
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    margin-top: 0.5rem;
+}
+
+
+.botonSubmit:hover:not(:disabled) {
+    background-color: #3d4f42; 
+}
+
+
+.botonSubmit:disabled {
+    background-color: #a0a0a0;
+    cursor: not-allowed;
+    opacity: 0.7;
+}

@@ -1,0 +1,30 @@
+[
+    {
+        "id": 1,
+        "nombre": "Gabriela Perez",
+        "email": "gabriela@auraderm.com",
+        "puesto": "Fundadora",
+        "imagen": "/imagenes/perfil-1.jpg"
+    },
+        {
+        "id": 2,
+        "nombre": "Florencia Brandan",
+        "email": "florencia@auraderm.com",
+        "puesto": "Secretaria",
+        "imagen": "/imagenes/perfil-5.jpg"
+    },
+        {
+        "id": 3,
+        "nombre": "Silvina Rodriguez",
+        "email": "silvina@auraderm.com",
+        "puesto": "Depiladora",
+        "imagen": "/imagenes/perfil-3.jpg"
+    },
+        {
+        "id": 4,
+        "nombre": "Bianca Gonzales",
+        "email": "bianca@auraderm.com",
+        "puesto": "Dermatóloga",
+        "imagen": "/imagenes/perfil-4.jpg"
+    }
+]

@@ -1,0 +1,7 @@
+.footerContainer {
+  background-color: var(--color-terciario); 
+  width: 90%;
+  margin: 20px auto;
+  padding: 10px;
+  text-align: center;
+}

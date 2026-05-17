@@ -1,0 +1,72 @@
+/* Contenedor de la sección */
+.contenedorProductos {
+    padding: 2rem 1rem;
+    text-align: center;
+    font-family: 'Helvetica', sans-serif;
+}
+
+/* Título de la sección */
+.tituloSeccion {
+    color: var(--color-terciario); /* Verde oscuro del footer */
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+/* La lista que agrupa las tarjetas */
+.listaProductos {
+    display: flex;
+    flex-wrap: wrap;         
+    justify-content: center; 
+    gap: 2.5rem;             
+    list-style: none;        
+    padding: 0;
+    margin: 0;
+}
+
+/* Cada tarjeta individual */
+.itemProducto {
+    background-color: #ffffff;
+    border: 1px solid var(--color-secundario);
+    border-radius: 12px;
+    padding: 1.5rem;
+    width: 240px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.03);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    text-align: center;
+}
+
+/* Efecto hover al pasar el mouse */
+.itemProducto:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+}
+
+/* Las imágenes con los bordes redondeados solicitados */
+.imagenProducto {
+    border-radius: 10px;     
+    object-fit: cover;
+    margin-bottom: 1rem;
+    border: 1px solid #f0f0f0;
+}
+
+/* Títulos de los productos */
+.nombreProducto {
+    font-size: 1.2rem;
+    color: var(--text-color); 
+    margin: 0.5rem 0;
+    font-weight: bold;
+}
+
+/* El precio */
+.precioProducto {
+    font-size: 1.1rem;
+    color: var(--color-terciario); 
+    font-weight: bold;
+    margin: 0;
+}
+
+/* Quita el subrayado azul de los enlaces dentro de las tarjetas */
+.itemProducto a, .itemServicio a {
+    text-decoration: none; /* Elimina el subrayado */
+    color: inherit;        /* Hace que el texto use el color que le corresponde por jerarquía */
+}

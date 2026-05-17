@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "nombre": "Crema Hidratante Facial",
+        "descripcion": "Una crema ligera que hidrata profundamente la piel, ideal para uso diario.",
+        "precio": 29000,
+        "imagen": "/imagenes/crema-hidratante-facial.jpg"
+    },
+    {
+        "id": 2,
+        "nombre": "Sérum Antiedad",
+        "descripcion": "Un sérum concentrado que ayuda a reducir las arrugas y mejorar la elasticidad de la piel.",
+        "precio": 45000,
+        "imagen": "/imagenes/serum.jpg"
+    },
+    {
+        "id": 3,
+        "nombre": "Protector Solar Facial",
+        "descripcion": "Un protector solar de amplio espectro que protege la piel de los daños causados por el sol.",
+        "precio": 35000,
+        "imagen": "/imagenes/protector-solar.jpg"
+    }
+
+
+
+]

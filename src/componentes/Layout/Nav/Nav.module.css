@@ -1,0 +1,17 @@
+.navContainer {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.navLink {
+  text-decoration: none;
+  color: #4b5f50; /* Tu verde oscuro */
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.navLink:hover {
+  color: #c4a474; /* Dorado al pasar el mouse */
+}

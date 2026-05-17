@@ -1,0 +1,69 @@
+.contenedorServicios {
+    padding: 2rem 1rem;
+    text-align: center;
+    font-family: 'Helvetica', sans-serif;
+}
+
+.tituloSeccion {
+    color: var(--color-terciario);
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.listaServicios {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2.5rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.itemServicio {
+    background-color: #ffffff;
+    border: 1px solid var(--color-secundario);
+    border-radius: 12px;
+    padding: 1.5rem;
+    width: 240px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.03);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    text-align: center;
+}
+
+.itemServicio:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+}
+
+
+.imagenServicio {
+    border-radius: 10px;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    border: 1px solid #f0f0f0;
+}
+
+.nombreServicio {
+    font-size: 1.15rem;
+    color: var(--text-color);
+    margin: 0.5rem 0;
+    font-weight: bold;
+    min-height: 2.8rem; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.precioServicio {
+    font-size: 1.1rem;
+    color: var(--color-terciario);
+    font-weight: bold;
+    margin: 0;
+}
+
+/* Quita el subrayado azul de los enlaces dentro de las tarjetas */
+.itemProducto a, .itemServicio a {
+    text-decoration: none; /* Elimina el subrayado */
+    color: inherit;        /* Hace que el texto use el color que le corresponde por jerarquía */
+}

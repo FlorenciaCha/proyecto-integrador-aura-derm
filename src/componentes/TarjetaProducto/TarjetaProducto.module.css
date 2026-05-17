@@ -1,0 +1,51 @@
+.card {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  padding: 15px;
+  max-width: 250px;
+  text-align: center;
+  border: 1px solid var(--color-primario); 
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-5px); 
+}
+
+.imageContainer {
+  background-color: var(--background-color);
+  border-radius: 8px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+}
+
+.title {
+  color: var(--color-terciario);
+  font-size: 1.1rem;
+  margin: 10px 0;
+}
+
+.price {
+  color: var(--color-acento);
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.button {
+  background-color: var(--color-terciario);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}

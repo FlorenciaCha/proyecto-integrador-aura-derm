@@ -1,0 +1,23 @@
+:root{
+    --color-primario: #afc0ae;
+    --color-secundario: #dde6de;
+    --color-terciario: #4b5f50;
+    --color-acento: #c3a476;
+    --background-color: #f0f0f0;
+    --text-color: #333333;
+}
+
+#root {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Helvetica', sans-serif;
+  background-color: var(--background-color);
+}
+

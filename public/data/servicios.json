@@ -1,0 +1,65 @@
+[
+  {
+    "id": 1,
+    "nombre": "Depilación tradicional",
+    "descripcion": "Método clásico de remoción de vello con cera del sistema correspondiente, ideal para una piel suave y duradera.",
+    "precio": 21000,
+    "imagen": "/imagenes/dep-tradicional.png"
+  },
+  {
+    "id": 2,
+    "nombre": "Depilación láser",
+    "descripcion": "Tratamiento de depilación definitiva con tecnología láser de última generación, seguro y eficaz para eliminar el vello de raíz.",
+    "precio": 45000,
+    "imagen": "/imagenes/dep-laser.jpg"
+  },
+  {
+    "id": 3,
+    "nombre": "Limpieza facial profunda",
+    "descripcion": "Procedimiento integral que elimina impurezas, puntos negros y células muertas, devolviendo la luminosidad e hidratación natural al rostro.",
+    "precio": 28000,
+    "imagen": "/imagenes/limpieza-facial.jpeg"
+  },
+  {
+    "id": 4,
+    "nombre": "Tratamiento facial antiage",
+    "descripcion": "Sesión rejuvenecedora con activos concentrados que ayudan a reducir líneas de expresión, mejorar la elasticidad y reafirmar los tejidos de la piel.",
+    "precio": 35000,
+    "imagen": "/imagenes/tratamiento-antiage.jpg"
+  },
+  {
+    "id": 5,
+    "nombre": "Dermaplaning",
+    "descripcion": "Exfoliación física delicada mediante bisturí dermatológico que retira la capa de células muertas y el vello facial fino, logrando una textura ultra suave.",
+    "precio": 26000,
+    "imagen": "/imagenes/dermaplaning.jpg"
+  },
+  {
+    "id": 6,
+    "nombre": "Microneedling",
+    "descripcion": "Terapia de inducción de colágeno mediante microagujas que minimiza poros, difumina cicatrices y mejora notablemente la calidad y firmeza de la piel.",
+    "precio": 38000,
+    "imagen": "/imagenes/micro.jpg"
+  },
+  {
+    "id": 7,
+    "nombre": "Peeling",
+    "descripcion": "Renovación celular asistida mediante la aplicación de ácidos específicos que unifican el tono, atenúan manchas y suavizan imperfecciones.",
+    "precio": 24000,
+    "imagen": "/imagenes/peeling.jpg"
+  },
+  {
+    "id": 8,
+    "nombre": "Peeling de algas",
+    "descripcion": "Tratamiento peeling 100% orgánico y natural a base de microespículas de algas, ideal para una renovación profunda, control de acné y efecto lifting.",
+    "precio": 32000,
+    "imagen": "/imagenes/peeling-algas.jpg"
+  },
+  {
+    "id": 9,
+    "nombre": "Masajes relajantes y descontracturantes",
+    "descripcion": "Sesión de masajes corporales que alivian las tensiones musculares acumuladas, reducen el estrés y promueven un estado de relajación profunda.",
+    "precio": 30000,
+    "imagen": "/imagenes/masajes.jpg"
+  }
+]
