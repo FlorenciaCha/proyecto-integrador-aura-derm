@@ -1,5 +1,21 @@
+/* app.css */
+
 main {
   text-align: center;
-  margin: 40px 0;
+  margin: 0;             
+  padding: 40px 0;       
+  flex: 1;               
 }
 
+
+html, body {
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100% !important;
+  height: 100% !important; 
+}
+
+
+*, *::before, *::after {
+  box-sizing: border-box; 
+}

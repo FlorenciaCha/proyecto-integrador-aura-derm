@@ -1,5 +1,57 @@
-div {
-    text-align: center;
-    padding: 20px;
-    font-family: Arial, sans-serif;
+/* --- Estilos exclusivos de la Página de Inicio --- */
+
+.heroBanner {
+    position: relative;
+    height: 80vh; 
+    min-height: 550px;
+    /* Si guardas la imagen en 'public/imagenes/', esta es la ruta correcta para producción y dev: */
+    background-image: url('/imagenes/banner-aura-derm-2.jpg'); 
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    width: 100%;
+}
+
+.heroOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(75, 95, 80, 0.4), rgba(43, 51, 45, 0.5));
+}
+
+.heroContent {
+    position: relative;
+    z-index: 2; /* Asegura que el texto quede por encima del overlay */
+}
+
+.heroContent h1 {
+    letter-spacing: 4px;
+}
+
+.roundedSection {
+    background-color: var(--color-secundario);
+    opacity: 0.95;
+    border-radius: var(--border-radius-lg);
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.heroContent :global(.btn-custom-accent) {
+    background-color: var(--color-acento) !important; 
+    color: #ffffff !important; 
+    font-weight: 500;
+    letter-spacing: 1px;
+    border: none !important;
+    padding: 12px 35px !important; 
+    box-shadow: 0 4px 14px rgba(195, 164, 118, 0.4) !important; 
+    transition: all 0.3s ease-in-out !important;
+}
+
+.heroContent :global(.btn-custom-accent):hover {
+    background-color: var(--color-terciario) !important; 
+    color: #ffffff !important;
+    transform: translateY(-2px); 
+    box-shadow: 0 6px 20px rgba(75, 95, 80, 0.3) !important;
 }

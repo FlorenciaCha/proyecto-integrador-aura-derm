@@ -1,0 +1,197 @@
+/* Título Principal */
+.tituloPrincipal {
+    color: var(--color-terciario);
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+/* Estado de Carrito Vacío */
+.vacioContainer {
+    background-color: #ffffff;
+    border: 1px solid var(--color-secundario);
+    border-radius: var(--border-radius-lg);
+    padding: 50px 30px;
+    max-width: 500px;
+    margin: 0 auto;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+}
+
+.buttonVolver {
+    display: inline-block;
+    background-color: var(--color-terciario);
+    color: #ffffff;
+    padding: 12px 30px;
+    border-radius: var(--border-radius-md);
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+}
+
+.buttonVolver:hover {
+    background-color: #3d4f42;
+    color: #ffffff;
+}
+
+/* Lista de Productos y Cards Horizontales */
+.listaProductos {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.cartCard {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #ffffff;
+    border: 1px solid var(--color-secundario);
+    border-radius: var(--border-radius-md);
+    padding: 16px 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.01);
+    transition: transform 0.2s ease;
+}
+
+.cartCard:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+.cardInfoContainer {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.itemImg {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+    background-color: #ffffff;
+    border-radius: 8px;
+    border: 1px solid var(--color-secundario);
+    padding: 5px;
+}
+
+.itemDetalles h4 {
+    margin: 0 0 4px 0;
+    font-size: 1.1rem;
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+.cantPrecio {
+    margin: 0 0 2px 0;
+    font-size: 0.9rem;
+    color: #666666;
+}
+
+.cantPrecio span {
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.subtotalText {
+    margin: 0;
+    font-size: 0.95rem;
+    color: var(--text-color);
+}
+
+.subtotalText strong {
+    color: var(--color-acento);
+}
+
+/* Botón Eliminar Individual (Suave Coral Pastel) */
+.buttonEliminar {
+    background-color: transparent;
+    color: #b56576;
+    border: 1px solid #e5989b;
+    width: 40px;
+    height: 40px;
+    border-radius: var(--border-radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.buttonEliminar:hover {
+    background-color: #fff5f5;
+    color: #b56576;
+}
+
+/* Contenedor del Resumen de Compra a la derecha */
+.resumenContainer {
+    background-color: var(--color-secundario);
+    border-radius: var(--border-radius-lg); /* Bordes redondeados corporativos grandes */
+    padding: 30px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.02);
+}
+
+.resumenContainer h3 {
+    font-size: 1.3rem;
+    color: var(--color-terciario);
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.resumenContainer hr {
+    border-top: 1px solid rgba(75, 95, 80, 0.2);
+    margin-bottom: 20px;
+}
+
+.totalLabel {
+    font-size: 1.05rem;
+    color: var(--text-color);
+}
+
+.totalPrecio {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--color-terciario);
+}
+
+/* Botones del Resumen */
+.buttonFinalizar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background-color: var(--color-terciario);
+    color: #ffffff;
+    border: none;
+    padding: 14px;
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: var(--border-radius-md);
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    box-shadow: 0 4px 10px rgba(75, 95, 80, 0.15);
+}
+
+.buttonFinalizar:hover {
+    background-color: #3d4f42;
+    color: #ffffff;
+}
+
+.buttonFinalizar:active {
+    transform: scale(0.98);
+}
+
+.buttonVaciar {
+    background-color: transparent;
+    color: #b56576;
+    border: 1px solid #e5989b;
+    padding: 10px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    border-radius: var(--border-radius-md);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.buttonVaciar:hover {
+    background-color: #ffffff;
+    color: #b56576;
+}

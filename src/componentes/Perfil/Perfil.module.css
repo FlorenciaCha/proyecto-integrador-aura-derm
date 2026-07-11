@@ -1,0 +1,205 @@
+/* Panel de usuario superior */
+.perfilCard {
+    background-color: var(--color-secundario);
+    border-radius: var(--border-radius-lg);
+    padding: 35px 40px;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.02);
+}
+
+.userAvatar {
+    background-color: var(--background-color);
+    color: var(--color-terciario);
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+}
+
+.userInfo h1 {
+    font-size: 1.8rem;
+    color: var(--color-terciario);
+    font-weight: 600;
+    margin: 0 0 5px 0;
+}
+
+.userInfo h2 {
+    font-size: 1.15rem;
+    color: var(--text-color);
+    font-weight: 400;
+    margin: 0 0 5px 0;
+}
+
+.emailHighlight {
+    font-weight: 500;
+}
+
+.userRol {
+    margin: 0;
+    font-size: 0.85rem;
+    color: var(--color-terciario);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+/* Botón de Logout sutil */
+.botonLogout {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: transparent;
+    color: #b56576; /* Tono coral suave de tu paleta de eliminación */
+    border: 1px solid #e5989b;
+    padding: 10px 24px;
+    border-radius: var(--border-radius-md);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.botonLogout:hover {
+    background-color: #fff5f5;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(229, 152, 155, 0.15);
+}
+
+/* Sección de Favoritos */
+.favoritosSeccion {
+    margin-bottom: 50px;
+}
+
+.seccionTitulo {
+    font-size: 1.4rem;
+    color: var(--color-terciario);
+    font-weight: 500;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.iconoCorazon {
+    color: #b56576;
+    fill: #b56576;
+}
+
+/* Estado sin favoritos */
+.noFavoritos {
+    background-color: #ffffff;
+    border: 1px solid var(--color-secundario);
+    border-radius: var(--border-radius-lg);
+    padding: 40px;
+    text-align: center;
+    color: #777777;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.01);
+}
+
+.linkTienda {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--color-terciario);
+    font-weight: 600;
+    text-decoration: none;
+    margin-top: 10px;
+    transition: transform 0.2s ease;
+}
+
+.linkTienda:hover {
+    transform: translateX(4px);
+    color: var(--color-acento);
+}
+
+/* Tarjetas de Favoritos */
+.favCard {
+    border: 1px solid var(--color-secundario) !important;
+    border-radius: var(--border-radius-md) !important;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    background-color: #ffffff;
+    height: 100%;
+}
+
+.favCard:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+}
+
+.favImgWrapper {
+    height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    padding: 15px;
+    border-bottom: 1px solid var(--color-secundario);
+}
+
+.favImgWrapper img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+.favTitulo {
+    font-size: 1rem;
+    color: var(--text-color);
+    font-weight: 500;
+    margin-bottom: 6px;
+    text-align: left;
+}
+
+.favPrecio {
+    color: var(--color-acento);
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+/* Botones de acción en tarjetas de favoritos */
+.botonVer {
+    flex: 1;
+    background-color: var(--color-primario);
+    color: var(--text-color);
+    border: none;
+    padding: 8px 12px;
+    border-radius: var(--border-radius-md);
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+}
+
+.botonVer:hover {
+    background-color: var(--color-terciario);
+    color: #ffffff;
+}
+
+.botonQuitar {
+    background-color: transparent;
+    border: 1px solid #e5989b;
+    border-radius: var(--border-radius-md);
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.botonQuitar:hover {
+    background-color: #fff5f5;
+}
+
+.corazonLleno {
+    color: #b56576;
+    fill: #b56576;
+}

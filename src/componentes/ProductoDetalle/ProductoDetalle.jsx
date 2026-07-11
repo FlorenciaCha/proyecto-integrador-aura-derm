@@ -30,6 +30,22 @@ const ProductoDetalle = () => {
             <img src={producto.imagen} alt={producto.nombre} style ={{ maxWidth: '400px'}}/>
             <h3>${producto.precio}</h3>
             <p>{producto.descripcion}</p>
+
+            {/* Lógica de Favoritos con Operador Ternario */}
+            <span onClick={marcarComoFavorito} style={{ cursor: 'pointer', fontSize: '24px' }}>
+                {esFavorito ? '⭐' : '☆'} 
+            </span>
+
+            <button className={styles.button} onClick={handleAddToCart}>
+                Agregar {cantidad} al Carrito
+            </button>
+
+            {/* Opcional: Si querés mostrarle al usuario cuántos ya tiene guardados en el carrito en total */}
+            {cantidadActual > 0 && (
+                <p style={{ fontSize: '12px', color: '#666', marginTop: '5px' }}>
+                    Ya tenés {cantidadActual} en el carrito
+                </p>
+            )}
         </div>
     );
 };

@@ -1,87 +1,99 @@
-/* Contenedor del formulario centrado en la pantalla */
+
 .formulario {
     display: flex;
     flex-direction: column;
-    max-width: 26rem;
-    margin: 4rem auto; /* Lo centra horizontalmente en la pantalla */
-    padding: 2rem;
+    max-width: 32rem; 
+    margin: 2rem auto; 
+    padding: 2.5rem;
     background-color: #ffffff;
     border: 1px solid var(--color-secundario);
-    border-radius: 12px;
+    border-radius: var(--border-radius-lg); 
     gap: 20px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.02);
     font-family: 'Helvetica', sans-serif;
 }
 
-/* Título interno */
+
 .formulario h3 {
     color: var(--color-terciario);
     text-align: center;
     margin-bottom: 0.5rem;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
+    font-weight: 500;
 }
 
-/* Bloques contenedores de cada campo */
+
 .campo {
     display: flex;
     flex-direction: column;
     gap: 6px;
 }
 
-/* Etiquetas del formulario */
+
 .campo label {
-    font-weight: bold;
-    color: #555555;
-    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-color);
+    font-size: 0.95rem;
 }
 
-/* Estilo para los inputs de texto y número */
+
 .inputControl {
-    padding: 0.6rem 0.8rem;
-    border: 1.5px solid var(--color-terciario); /* Bordes del color del footer */
-    border-radius: 6px;
+    padding: 0.75rem 1rem; 
+    border: 1px solid var(--color-secundario); 
+    border-radius: var(--border-radius-lg); 
     font-family: 'Helvetica', sans-serif;
-    font-size: 1rem;
+    font-size: 0.95rem;
+    color: var(--text-color);
+    background-color: #ffffff;
     outline: none;
     transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-
 .inputControl:focus {
-    border-color: var(--color-primario);
-    box-shadow: 0 0 0 3px rgba(175, 192, 174, 0.3);
+    border-color: var(--color-terciario);
+    box-shadow: 0 0 0 3px rgba(75, 95, 80, 0.1); 
 }
-
 
 .inputFile {
     font-family: 'Helvetica', sans-serif;
     font-size: 0.9rem;
     padding: 0.4rem 0;
+    color: var(--text-color);
 }
 
-/* El botón de envío solicitado */
+
 .botonSubmit {
     background-color: var(--color-terciario); 
     color: #ffffff;
-    padding: 0.75rem;
+    padding: 0.85rem;
     border: none;
-    border-radius: 6px;
+    border-radius: var(--border-radius-lg); 
     font-family: 'Helvetica', sans-serif; 
     font-size: 1rem;
-    font-weight: bold;
+    font-weight: 500;
     cursor: pointer;
     transition: background-color 0.2s ease, transform 0.1s ease;
-    margin-top: 0.5rem;
+    margin-top: 1rem;
+    box-shadow: 0 4px 10px rgba(75, 95, 80, 0.15);
 }
-
 
 .botonSubmit:hover:not(:disabled) {
     background-color: #3d4f42; 
+    transform: translateY(-1px);
 }
 
+.botonSubmit:active:not(:disabled) {
+    transform: scale(0.99);
+}
 
 .botonSubmit:disabled {
     background-color: #a0a0a0;
     cursor: not-allowed;
     opacity: 0.7;
+}
+
+
+.previewContainer img {
+    border-radius: var(--border-radius-md);
+    border: 1px solid var(--color-secundario);
 }

@@ -1,0 +1,144 @@
+.botonVolver {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--color-terciario);
+    text-decoration: none;
+    font-weight: 500;
+    margin-bottom: 20px;
+    transition: transform 0.2s ease;
+}
+
+.botonVolver:hover {
+    transform: translateX(-4px);
+    color: var(--text-color);
+}
+
+.detalleContainer {
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+.imagenWrapper {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: var(--border-radius-md);
+    border: 1px solid var(--color-secundario);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+}
+
+.productoImagen {
+    max-width: 100%;
+    max-height: 380px;
+    object-fit: contain;
+}
+
+/* El rectángulo contenedor principal usando el color primario y bordes redondeados */
+.cartaDetalle {
+    background-color: var(--background-color);
+    border-radius: var(--border-radius-lg); /* Bordes redondeados grandes */
+    padding: 40px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+    display: flex;
+    flex-direction: column;
+}
+
+.categoriaTag {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--color-terciario);
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.productoTitulo {
+    font-size: 2.2rem;
+    color: var(--text-color);
+    margin: 0 0 15px 0;
+    font-weight: 500;
+}
+
+.productoDescripcion {
+    font-size: 1.05rem;
+    color: var(--text-color);
+    opacity: 0.9;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.productoPrecio {
+    font-size: 2rem;
+    color: var(--color-terciario);
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.favoritoSeccion {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    color: var(--text-color);
+    margin-bottom: 25px;
+    user-select: none;
+    width: fit-content;
+}
+
+.corazonVacio {
+    font-size: 1.3rem;
+    color: var(--text-color);
+    transition: transform 0.2s ease;
+}
+
+.corazonLleno {
+    font-size: 1.3rem;
+    color: #b56576; /* Tono coral suave para favoritos activos */
+    fill: #b56576;
+}
+
+.favoritoSeccion:hover .corazonVacio {
+    transform: scale(1.1);
+}
+
+/* Botón de acción minimalista elegante acoplado a la paleta */
+.botonAgregar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: var(--color-terciario); 
+    color: #ffffff;
+    border: none;
+    padding: 14px 30px;
+    font-size: 1.05rem;
+    font-weight: 500;
+    border-radius: var(--border-radius-md);
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    box-shadow: 0 4px 12px rgba(75, 95, 80, 0.2);
+    width: fit-content;
+}
+
+.botonAgregar:hover {
+    background-color: #3e4f42;
+}
+
+.botonAgregar:active {
+    transform: scale(0.98);
+}
+
+.cantidadAviso {
+    font-size: 0.85rem;
+    color: var(--color-terciario);
+    margin-top: 10px;
+    font-style: italic;
+}
+
+.loading {
+    font-size: 1.1rem;
+    color: var(--color-terciario);
+    text-align: center;
+    font-style: italic;
+}

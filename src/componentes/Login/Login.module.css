@@ -1,0 +1,84 @@
+.loginPageContainer {
+    min-height: 100vh;
+    background-color: var(--background-color);
+    
+    padding-top: 100px; 
+    padding-bottom: 40px;
+    box-sizing: border-box;
+}
+
+/* Tarjeta contenedora flotante */
+.loginCard {
+    max-width: 450px;
+    border: none !important;
+    background-color: #ffffff;
+    border-radius: var(--border-radius-lg) !important;
+    transition: transform 0.3s ease;
+}
+
+.loginTitle {
+    color: var(--color-terciario);
+    letter-spacing: 2px;
+    font-size: 1.75rem;
+}
+
+.inputLabel {
+    color: var(--text-color);
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-left: 4px;
+}
+
+/* Campos de entrada */
+.customInput {
+    border: 1.5px solid var(--color-secundario) !important;
+    border-radius: var(--border-radius-md) !important;
+    color: var(--text-color) !important;
+    background-color: #ffffff !important;
+    font-size: 0.95rem;
+    transition: all 0.3s ease !important;
+}
+
+.customInput:focus {
+    outline: none !important;
+    box-shadow: 0 0 0 3px rgba(175, 192, 174, 0.2) !important; 
+    border-color: var(--color-primario) !important;
+}
+
+.customInput::placeholder {
+    color: #a0aab0;
+    opacity: 0.7;
+}
+
+/* Botón de envío */
+.btnSubmit {
+    background-color: var(--color-terciario) !important;
+    color: #ffffff !important;
+    border: none !important;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 4px 10px rgba(75, 95, 80, 0.15) !important;
+}
+
+.btnSubmit:hover {
+    background-color: var(--color-acento) !important;
+    box-shadow: 0 6px 15px rgba(195, 164, 118, 0.25) !important;
+    transform: translateY(-1px);
+}
+
+.btnSubmit:active {
+    transform: translateY(1px);
+}
+
+/* Enlace a Registro */
+.registerLink {
+    color: var(--color-acento);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.registerLink:hover {
+    color: var(--color-terciario);
+    text-decoration: underline;
+}

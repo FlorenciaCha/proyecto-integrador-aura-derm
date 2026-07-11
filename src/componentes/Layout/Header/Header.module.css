@@ -1,7 +1,7 @@
 .headerContainer {
-  background-color: var(--color-primario); /* Tu verde claro */
-  width: 90%; /* Para que no toque los bordes laterales */
-  margin: 20px auto; /* Centra el bloque y le da aire arriba/abajo */
+  background-color: var(--color-secundario); /* Tu verde claro */
+  width: 100%; /* Para que no toque los bordes laterales */
+  margin: auto; /* Centra el bloque y le da aire arriba/abajo */
   padding: 10px;
   text-align: center;
 }

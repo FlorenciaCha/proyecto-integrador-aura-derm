@@ -1,17 +1,210 @@
 .navContainer {
-  margin-top: 10px;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
+    background-color: var(--color-secundario, rgba(255, 255, 255, 0.95));
+    padding: 10px 40px;
+    margin: 0;
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-sizing: border-box;
+}
+
+.logoLink {
+    display: flex;
+    align-items: center;
+}
+
+.logoImage {
+    height: 45px; 
+    width: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+/* --- BOTÓN HAMBURGUESA (Oculto por defecto en escritorio) --- */
+.hamburgerButton {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--color-terciario);
+    cursor: pointer;
+    z-index: 1001;
+    padding: 5px;
+    outline: none;
+}
+
+/* Contenedor colapsable que agrupa enlaces y auth */
+.menuCollapse {
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Enlaces generales */
+.navLinksWrapper {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-left: auto;  
+    margin-right: 25px;  
 }
 
 .navLink {
-  text-decoration: none;
-  color: #4b5f50; /* Tu verde oscuro */
-  font-weight: bold;
-  transition: color 0.3s;
+    text-decoration: none;
+    color: var(--color-terciario);
+    font-weight: 500;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    padding: 6px 12px;
+    border-radius: 8px;
 }
 
 .navLink:hover {
-  color: #c4a474; /* Dorado al pasar el mouse */
+    color: var(--color-acento);
+    background-color: rgba(255, 255, 255, 0.4); 
+}
+
+/* Contenedor de autenticación */
+.authWrapper {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.authButtons {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.userInfoMobile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* --- BOTONES DE REGISTRO E INGRESO --- */
+.btnNavLogin {
+    text-decoration: none;
+    color: var(--color-terciario);
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 6px 16px;
+    border: 1.5px solid var(--color-terciario);
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+.btnNavLogin:hover {
+    background-color: var(--color-terciario);
+    color: #ffffff;
+    transform: translateY(-1px);
+}
+
+.btnNavRegister {
+    text-decoration: none;
+    color: #ffffff !important;
+    background-color: var(--color-acento);
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 7px 20px;
+    border-radius: 50px;
+    box-shadow: 0 2px 6px rgba(195, 164, 118, 0.2);
+    transition: all 0.3s ease;
+}
+
+.btnNavRegister:hover {
+    background-color: var(--color-terciario);
+    box-shadow: 0 4px 12px rgba(75, 95, 80, 0.2);
+    transform: translateY(-1px);
+}
+
+.userEmail {
+    font-size: 0.85rem;
+    color: var(--color-terciario);
+    font-weight: 500;
+    opacity: 0.9;
+}
+
+/* ==========================================
+   MEDIA QUERY: ADAPTACIÓN MOBILE-FIRST (Pantallas < 992px)
+   ========================================== */
+@media (max-width: 992px) {
+    .navContainer {
+        padding: 10px 20px;
+    }
+
+    /* Mostramos el botón de hamburguesa */
+    .hamburgerButton {
+        display: block;
+    }
+
+    /* Transformamos el menú en un panel desplegable vertical */
+    .menuCollapse {
+        position: absolute;
+        top: 100%; /* Se abre justo debajo del header */
+        left: 0;
+        width: 100vw;
+        background-color: var(--color-secundario);
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+        padding: 30px 0;
+        border-top: 1px solid rgba(75, 95, 80, 0.1);
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.05);
+        
+        /* Oculto por defecto con transición suave */
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+        transition: all 0.3s ease-in-out;
+    }
+
+    /* Clase activa que inyecta React cuando menuAbierto === true */
+    .menuOpen {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    /* Alineamos los enlaces de arriba a abajo */
+    .navLinksWrapper {
+        flex-direction: column;
+        width: 100%;
+        gap: 15px;
+    }
+
+    .navLink {
+        width: 80%;
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    /* Alineamos botones de autenticación en vertical */
+    .authWrapper {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .authButtons {
+        flex-direction: column;
+        width: 80%;
+        gap: 15px;
+    }
+
+    .userInfoMobile {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .btnNavLogin, .btnNavRegister {
+        width: 100%;
+        text-align: center;
+    }
 }
