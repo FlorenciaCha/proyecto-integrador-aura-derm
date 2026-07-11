@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import { Container, Row, Col, Carousel, Card } from 'react-bootstrap';
 import { FiTrendingUp, FiShield, FiHeart, FiArrowRight } from 'react-icons/fi';
 import styled from 'styled-components';
-import styles from "./inicio.module.css"; 
+import styles from "./Inicio.module.css"; 
 
 // ==========================================
 // COMPONENTES ESTILIZADOS PARA EL INICIO
