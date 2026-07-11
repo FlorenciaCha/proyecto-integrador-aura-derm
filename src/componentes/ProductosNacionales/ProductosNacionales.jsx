@@ -1,17 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import { collection, getDocs, limit, query, startAfter } from 'firebase/firestore'; // Importamos utilidades de paginación
+import { collection, getDocs } from 'firebase/firestore'; 
 import { db } from '../../firebase/config.jsx'; 
 import { Link } from 'react-router-dom';
-import { Container, Row, Col, Card, Spinner, Button, Alert } from 'react-bootstrap'; // Agregamos Spinner, Button y Alert
+import { Container, Row, Col, Card, Spinner } from 'react-bootstrap'; 
 import { Helmet } from 'react-helmet'; 
 import { FiSearch, FiPlus } from 'react-icons/fi'; 
 import { useCart } from '../../context/CartContext.jsx'; 
 import { useAuth } from '../../context/AuthContext.jsx'; 
 import styled from 'styled-components'; 
 
-// ==========================================
-// COMPONENTES ESTILIZADOS
-// ==========================================
+
 
 const TituloSeccion = styled.h1`
   color: var(--color-terciario);
@@ -119,49 +117,34 @@ const ButtonAddCart = styled.button`
   }
 `;
 
-// ==========================================
-// COMPONENTE PRINCIPAL
-// ==========================================
 
-const PRODUCTOS_POR_PAGINA = 6; // Definimos el límite de carga por página
 
 const ProductosNacionales = () => {
     const [productos, setProductos] = useState([]);
     const [error, setError] = useState(null);
     const [searchTerm, setSearchTerm] = useState('');
-    
-    // Estados de paginación y carga sugeridos por la Clase 14
-    const [cargando, setCargando] = useState(true);
-    const [cargandoMas, setCargandoMas] = useState(false);
-    const [ultimoVisible, setUltimoVisible] = useState(null);
-    const [hayMas, setHayMas] = useState(true);
+    const [cargando, setCargando] = useState(true); 
     
     const { addToCart } = useCart();
     const { user } = useAuth(); 
 
-    // Filtrado local sobre los productos que ya están cargados en pantalla
+    
     const productosFiltrados = productos.filter(prod => 
         prod.nombre.toLowerCase().includes(searchTerm.toLowerCase())
     );
 
-    // Función 1: Obtener productos iniciales (Límite controlado de Firestore)
-    const obtenerProductosIniciales = () => {
+    
+    const obtenerProductos = () => {
         setCargando(true);
         const productosDB = collection(db, "productos nacionales");
-        const q = query(productosDB, limit(PRODUCTOS_POR_PAGINA));
 
-        getDocs(q)
+        getDocs(productosDB)
             .then((resp) => {
                 const productosData = resp.docs.map((doc) => ({
                     ...doc.data(),
                     id: doc.id
                 }));
                 setProductos(productosData);
-                
-                // Guardamos la referencia para el paginador
-                const ultimoDoc = resp.docs[resp.docs.length - 1];
-                setUltimoVisible(ultimoDoc);
-                setHayMas(resp.docs.length === PRODUCTOS_POR_PAGINA);
             })
             .catch((err) => {
                 console.error("Error Firebase:", err);
@@ -170,42 +153,8 @@ const ProductosNacionales = () => {
             .finally(() => setCargando(false));
     };
 
-    // Función 2: Cargar siguiente página (startAfter)
-    const obtenerMasProductos = () => {
-        if (!hayMas || cargandoMas) return;
-        setCargandoMas(true);
-
-        const productosDB = collection(db, "productos nacionales");
-        const q = query(productosDB, startAfter(ultimoVisible), limit(PRODUCTOS_POR_PAGINA));
-
-        getDocs(q)
-            .then((resp) => {
-                const productosData = resp.docs.map((doc) => ({
-                    ...doc.data(),
-                    id: doc.id
-                }));
-                
-                // Anexamos los nuevos productos a los anteriores
-                setProductos((anteriores) => [...anteriores, ...productosData]);
-                
-                const ultimoDoc = resp.docs[resp.docs.length - 1];
-                setUltimoVisible(ultimoDoc);
-                setHayMas(resp.docs.length === PRODUCTOS_POR_PAGINA);
-            })
-            .catch((err) => {
-                console.error("Error al cargar más productos:", err);
-            })
-            .finally(() => setCargandoMas(false));
-    };
-
-    // Función 3: Resetear paginado ("Ver menos")
-    const verMenos = () => {
-        obtenerProductosIniciales();
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    };
-
     useEffect(() => {
-        obtenerProductosIniciales();
+        obtenerProductos();
     }, []); 
 
     const handleQuickAdd = (prod) => {
@@ -254,80 +203,42 @@ const ProductosNacionales = () => {
                     </Spinner>
                 </div>
             ) : (
-                <>
-                    {/* Grilla de productos */}
-                    <Row> 
-                        {productosFiltrados.length === 0 ? (
-                            <Col xs={12}>
-                                <p className="text-center text-muted">No se encontraron productos que coincidan con la búsqueda.</p>
-                            </Col>
-                        ) : (
-                            productosFiltrados.map(prod => ( 
-                                <Col key={prod.id} xs={12} sm={6} lg={4} className="mb-4"> 
-                                    <StyledCard className="h-100"> 
-                                        <Card.Img variant="top" src={prod.imagen || 'https://via.placeholder.com/200'} alt={prod.nombre} /> 
-                                        <Card.Body className="d-flex flex-column"> 
-                                            <Card.Title className="fs-5 text-dark mb-2">{prod.nombre}</Card.Title> 
-                                            <Card.Text className="fw-bold mb-3" style={{ color: 'var(--color-acento)', fontSize: '1.2rem' }}>
-                                                ${prod.precio}
-                                            </Card.Text> 
+                /* Grilla de productos */
+                <Row className="mb-5"> 
+                    {productosFiltrados.length === 0 ? (
+                        <Col xs={12}>
+                            <p className="text-center text-muted">No se encontraron productos que coincidan con la búsqueda.</p>
+                        </Col>
+                    ) : (
+                        productosFiltrados.map(prod => ( 
+                            <Col key={prod.id} xs={12} sm={6} lg={4} className="mb-4"> 
+                                <StyledCard className="h-100"> 
+                                    <Card.Img variant="top" src={prod.imagen || 'https://via.placeholder.com/200'} alt={prod.nombre} /> 
+                                    <Card.Body className="d-flex flex-column"> 
+                                        <Card.Title className="fs-5 text-dark mb-2">{prod.nombre}</Card.Title> 
+                                        <Card.Text className="fw-bold mb-3" style={{ color: 'var(--color-acento)', fontSize: '1.2rem' }}>
+                                            ${prod.precio}
+                                        </Card.Text> 
+                                        
+                                        <CardActions>
+                                            <ButtonPrimary to={`/productos-nacionales/${prod.id}`}> 
+                                                Ver detalle 
+                                            </ButtonPrimary> 
                                             
-                                            <CardActions>
-                                                <ButtonPrimary to={`/productos-nacionales/${prod.id}`}> 
-                                                    Ver detalle 
-                                                </ButtonPrimary> 
-                                                
-                                                {/* Botón con etiqueta de accesibilidad ARIA */}
-                                                <ButtonAddCart 
-                                                    onClick={() => handleQuickAdd(prod)} 
-                                                    title="Agregar al carrito"
-                                                    aria-label={`Agregar ${prod.nombre} al carrito`}
-                                                >
-                                                    <FiPlus size={20} />
-                                                </ButtonAddCart>
-                                            </CardActions>
-                                        </Card.Body> 
-                                    </StyledCard> 
-                                </Col> 
-                            ))
-                        )} 
-                    </Row> 
-
-                    {/* Botones de Control del Paginador (Ver más / Ver menos) */}
-                    {!searchTerm && (
-                        <Row className="mt-4 mb-5">
-                            <Col className="text-center d-flex justify-content-center gap-3">
-                                {productos.length > PRODUCTOS_POR_PAGINA && (
-                                    <Button variant="outline-secondary" onClick={verMenos}>
-                                        Ver menos
-                                    </Button>
-                                )}
-                                
-                                {hayMas ? (
-                                    <Button 
-                                        variant="success" 
-                                        onClick={obtenerMasProductos} 
-                                        disabled={cargandoMas}
-                                        style={{ backgroundColor: 'var(--color-terciario)', borderColor: 'var(--color-terciario)' }}
-                                    >
-                                        {cargandoMas ? (
-                                            <>
-                                                <Spinner as="span" animation="border" size="sm" role="status" aria-hidden="true" className="me-2" />
-                                                Cargando...
-                                            </>
-                                        ) : 'Cargar más'}
-                                    </Button>
-                                ) : (
-                                    productos.length > PRODUCTOS_POR_PAGINA && (
-                                        <Alert variant="light" className="m-0 border-0 text-muted">
-                                            No hay más productos para mostrar.
-                                        </Alert>
-                                    )
-                                )}
-                            </Col>
-                        </Row>
-                    )}
-                </>
+                                            <ButtonAddCart 
+                                                onClick={() => handleQuickAdd(prod)} 
+                                                title="Agregar al carrito"
+                                                aria-label={`Agregar ${prod.nombre} al carrito`}
+                                            >
+                                                <FiPlus size={20} />
+                                            </ButtonAddCart>
+                                        </CardActions>
+                                    </Card.Body> 
+                                </StyledCard> 
+                            </Col> 
+                        ))
+                    )} 
+                </Row> 
             )}
         </Container> 
     );
