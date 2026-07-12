@@ -8,9 +8,7 @@ import { FiTrendingUp, FiShield, FiHeart, FiArrowRight } from 'react-icons/fi';
 import styled from 'styled-components';
 import styles from "./Inicio.module.css"; 
 
-// ==========================================
-// COMPONENTES ESTILIZADOS PARA EL INICIO
-// ==========================================
+
 
 const TituloSeccion = styled.h2`
   color: var(--color-terciario);
@@ -168,15 +166,13 @@ const FeatureCard = styled(Card)`
   }
 `;
 
-// ==========================================
-// COMPONENTE PRINCIPAL
-// ==========================================
+
 
 export function Inicio() {
     const [destacados, setDestacados] = useState([]);
     const [loading, setLoading] = useState(true);
 
-    // Conexión directa a Firestore para extraer los productos reales
+    
     useEffect(() => {
         const productosCollection = collection(db, "productos nacionales");
         getDocs(productosCollection)
@@ -185,7 +181,7 @@ export function Inicio() {
                     ...doc.data(),
                     id: doc.id
                 }));
-                // Tomamos un máximo de 5 productos de forma destacada para el carrusel
+                // Toma un máximo de 5 productos de forma destacada para el carrusel
                 setDestacados(listaFormateada.slice(0, 5));
                 setLoading(false);
             })

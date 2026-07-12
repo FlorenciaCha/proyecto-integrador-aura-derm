@@ -41,7 +41,7 @@
   margin: 8px 0;
 }
 
-/* Textos secundarios (Categoría, Stock) */
+/* Textos secundarios  */
 .lista-productos p {
   font-size: 0.9rem;
   color: #4a5568;
@@ -51,7 +51,7 @@
 /* Resaltado del precio */
 .lista-productos p:nth-of-type(2) {
   font-weight: bold;
-  color: #d4a373; /* Un tono cálido sutil */
+  color: #d4a373; 
   font-size: 1.1rem;
 }
 

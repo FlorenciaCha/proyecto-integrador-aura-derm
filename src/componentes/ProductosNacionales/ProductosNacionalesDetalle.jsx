@@ -30,7 +30,7 @@ const ProductosNacionalesDetalle = () => {
                         const productoData = { ...resp.data(), id: resp.id };
                         setItem(productoData);
 
-                        // 3. COMPROBAMOS SI YA ERA FAVORITO AL CARGAR LA PÁGINA
+                        // COMPROBAR SI YA ERA FAVORITO AL CARGAR LA PÁGINA
                         if (user) {
                             const favsActuales = JSON.parse(localStorage.getItem(`favoritos_${user.uid}`)) || [];
                             const existe = favsActuales.some(item => item.id === resp.id);
@@ -60,7 +60,7 @@ const ProductosNacionalesDetalle = () => {
         const favsActuales = JSON.parse(localStorage.getItem(`favoritos_${user.uid}`)) || [];
         
         if (proximaCondicion) {
-            // Modo Guardar: Agregamos el objeto completo del producto para que el Perfil pueda leer sus campos
+            // Modo Guardar: Agregar el objeto completo del producto para que el Perfil pueda leer sus campos
             favsActuales.push(prod);
             localStorage.setItem(`favoritos_${user.uid}`, JSON.stringify(favsActuales));
             alert("Añadido a favoritos ⭐");
@@ -73,6 +73,13 @@ const ProductosNacionalesDetalle = () => {
     };
 
     const handleAddToCart = () => {
+        // VALIDACIÓN: Comprobar si el usuario no ha iniciado sesión
+        if (!user) {
+            alert("⚠️ Debes iniciar sesión para poder guardar productos en el carrito.");
+            return; 
+        }
+
+        //  Si el usuario está autenticado, procesar la compra normalmente
         if (prod) {
             addToCart(prod, 1); 
             alert(`¡Se agregó ${prod.nombre} al carrito! 🛒`);

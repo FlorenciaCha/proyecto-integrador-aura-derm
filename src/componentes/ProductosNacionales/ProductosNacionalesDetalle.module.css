@@ -33,10 +33,10 @@
     object-fit: contain;
 }
 
-/* El rectángulo contenedor principal usando el color primario y bordes redondeados */
+/* El rectángulo contenedor principal */
 .cartaDetalle {
     background-color: var(--background-color);
-    border-radius: var(--border-radius-lg); /* Bordes redondeados grandes */
+    border-radius: var(--border-radius-lg); 
     padding: 40px;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
     display: flex;
@@ -94,7 +94,7 @@
 
 .corazonLleno {
     font-size: 1.3rem;
-    color: #b56576; /* Tono coral suave para favoritos activos */
+    color: #b56576; 
     fill: #b56576;
 }
 
@@ -102,7 +102,7 @@
     transform: scale(1.1);
 }
 
-/* Botón de acción minimalista elegante acoplado a la paleta */
+
 .botonAgregar {
     display: inline-flex;
     align-items: center;

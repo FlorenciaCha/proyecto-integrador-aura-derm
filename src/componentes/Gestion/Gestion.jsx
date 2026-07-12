@@ -141,7 +141,7 @@ const BotonEliminar = styled(BotonAccion)`
 `; 
 
 
-// COMPONENTE PRINCIPAL
+
 
 
 const Gestion = () => {
@@ -181,7 +181,7 @@ const Gestion = () => {
         <AdminLayout>
             <h2>Gestión de Productos</h2>
             
-            {/* Contenedor del formulario unificado estéticamente con el Login */}
+            {/* Contenedor del formulario  */}
             <FormSectionWrapper>
                 <FormularioContainer 
                     productoAEditar={productoAEditar} 

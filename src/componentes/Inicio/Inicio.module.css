@@ -1,10 +1,9 @@
-/* --- Estilos exclusivos de la Página de Inicio --- */
+
 
 .heroBanner {
     position: relative;
     height: 80vh; 
     min-height: 550px;
-    /* Si guardas la imagen en 'public/imagenes/', esta es la ruta correcta para producción y dev: */
     background-image: url('/imagenes/banner-aura-derm-2.jpg'); 
     background-size: cover;
     background-position: center;

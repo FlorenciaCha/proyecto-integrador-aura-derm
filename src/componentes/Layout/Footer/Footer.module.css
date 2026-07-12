@@ -39,24 +39,24 @@
   gap: 4px;
 }
 
-/* Ajuste de colores para que hagan contraste con el fondo verde oscuro corporativo */
+
 .memberName {
   margin: 0;
   font-size: 1rem;
-  color: var(--background-color); /* Blanco perla/nude sutil de tu paleta */
+  color: var(--background-color); 
   font-weight: 500;
 }
 
 .memberRol {
   margin: 0;
   font-size: 0.85rem;
-  color: var(--color-secundario); /* Tono claro para que sea legible */
+  color: var(--color-secundario); 
 }
 
 /* Enlace a LinkedIn */
 .linkedinLink {
   font-size: 0.8rem;
-  color: var(--color-acento); /* Color dorado/acento para que resalte estéticamente */
+  color: var(--color-acento); 
   text-decoration: none;
   font-weight: 500;
   margin-top: 4px;
@@ -68,7 +68,7 @@
   color: var(--color-secundario);
 }
 
-/* Si usás la clase copyright para el párrafo final, te dejo el estilo acoplado */
+
 .footerContainer > p {
   margin: 0;
   font-size: 0.85rem;

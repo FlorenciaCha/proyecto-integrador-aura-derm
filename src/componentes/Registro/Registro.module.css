@@ -1,9 +1,8 @@
-/* --- Registro.module.css --- */
+
 
 .registerPageContainer {
     min-height: 100vh;
     background-color: var(--background-color);
-    /* Desplaza el contenedor para evitar que quede tapado por la Navbar absoluta */
     padding-top: 100px; 
     padding-bottom: 40px;
     box-sizing: border-box;

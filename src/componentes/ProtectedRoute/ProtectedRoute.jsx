@@ -7,7 +7,7 @@ const ProtectedRoute = ({children, rolesPermitidos}) => {
     const {user, loading} = useAuth();
 
     //Mientras se verfica el estado de autenticación, mostrar un mensaje de carga 
-    //Esto es cricial para no redirigir al login prematuramente en una recarga de pagina
+    //Esto es crucial para no redirigir al login prematuramente en una recarga de pagina
     if (loading){
         return <div>Cargando...</div>;
     }

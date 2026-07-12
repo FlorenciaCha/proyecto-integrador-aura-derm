@@ -7,7 +7,7 @@
 
 /* Título de la sección */
 .tituloSeccion {
-    color: var(--color-terciario); /* Verde oscuro del footer */
+    color: var(--color-terciario); 
     font-size: 2rem;
     margin-bottom: 2rem;
 }
@@ -65,8 +65,8 @@
     margin: 0;
 }
 
-/* Quita el subrayado azul de los enlaces dentro de las tarjetas */
+
 .itemProducto a, .itemServicio a {
-    text-decoration: none; /* Elimina el subrayado */
-    color: inherit;        /* Hace que el texto use el color que le corresponde por jerarquía */
+    text-decoration: none; 
+    color: inherit;        
 }

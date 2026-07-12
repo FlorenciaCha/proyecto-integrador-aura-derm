@@ -7,10 +7,10 @@ export function TarjetaProducto({ id, nombre, precio, stock, imagen }) {
   // Crear el objeto producto a partir de las props
   const producto = { id, nombre, precio, stock, imagen };
 
-  // 1. TRAER LAS FUNCIONES DEL CONTEXTO PRIMERO (Corregido)
+  // TRAER LAS FUNCIONES DEL CONTEXTO PRIMERO (Corregido)
   const { addToCart, getCantidadActual } = useCart(); // Traemos ambas funciones juntas
 
-  // 2. LEER LA CANTIDAD ACTUAL (Corregido: ahora la función ya existe en este punto)
+  //  LEER LA CANTIDAD ACTUAL (Corregido: ahora la función ya existe en este punto)
   const cantidadActual = getCantidadActual(producto.id); 
 
   // Estados locales independientes
@@ -48,10 +48,10 @@ export function TarjetaProducto({ id, nombre, precio, stock, imagen }) {
       <p>Precio: ${precio}</p>
       <p>Stock: {stock}</p>
 
-      {/* Selector de cantidad */}
+     
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px' }}>
         <button onClick={decrementar}>-</button>
-        {/* Cambiado: Mostramos el estado local 'cantidad' que manejan tus botones + y - */}
+        
         <span>{cantidad}</span>
         <button onClick={incrementar}>+</button>
       </div>
@@ -60,7 +60,7 @@ export function TarjetaProducto({ id, nombre, precio, stock, imagen }) {
         Agregar {cantidad} al Carrito
       </button>
 
-      {/* Opcional: Si querés mostrarle al usuario cuántos ya tiene guardados en el carrito en total */}
+     
       {cantidadActual > 0 && (
         <p style={{ fontSize: '12px', color: '#666', marginTop: '5px' }}>
           Ya tenés {cantidadActual} en el carrito

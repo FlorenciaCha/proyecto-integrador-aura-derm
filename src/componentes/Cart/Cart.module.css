@@ -100,7 +100,7 @@
     color: var(--color-acento);
 }
 
-/* Botón Eliminar Individual (Suave Coral Pastel) */
+/* Botón Eliminar Individual*/
 .buttonEliminar {
     background-color: transparent;
     color: #b56576;
@@ -123,7 +123,7 @@
 /* Contenedor del Resumen de Compra a la derecha */
 .resumenContainer {
     background-color: var(--color-secundario);
-    border-radius: var(--border-radius-lg); /* Bordes redondeados corporativos grandes */
+    border-radius: var(--border-radius-lg); 
     padding: 30px;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.02);
 }

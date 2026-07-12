@@ -4,9 +4,7 @@ import { collection, getDocs, addDoc, deleteDoc, doc } from 'firebase/firestore'
 import styled from 'styled-components';
 import { FiTag, FiTrash2, FiPercent } from 'react-icons/fi';
 
-// ==========================================
-// COMPONENTES ESTILIZADOS CORPORATIVOS
-// ==========================================
+
 
 const AdminLayout = styled.div`
   max-width: 1000px;
@@ -184,9 +182,7 @@ const BotonEliminar = styled.button`
   }
 `;
 
-// ==========================================
-// COMPONENTE PRINCIPAL
-// ==========================================
+
 
 const GestionCupones = () => {
     const [cupones, setCupones] = useState([]);
@@ -297,7 +293,7 @@ const GestionCupones = () => {
                         <HorizontalCard key={cupon.id}>
                             <CuponInfo>
                                 <FiTag className="icon-tag" size={18} />
-                                <strong>{cupones.codigo}</strong> {/* Corregido de cupon.codigo a tu estado o propiedad */}
+                                <strong>{cupones.codigo}</strong> 
                                 <strong>{cupon.codigo}</strong>
                                 <span>&bull; Descuento: {cupon.descuento}%</span>
                             </CuponInfo>

@@ -3,9 +3,7 @@ import { FormularioProductos } from '../FormularioProductos/FormularioProductos'
 import { getFirestore, collection, addDoc, doc, updateDoc } from 'firebase/firestore';
 import styled from 'styled-components';
 
-// ==========================================
-// COMPONENTES ESTILIZADOS CORPORATIVOS
-// ==========================================
+
 
 const ContainerCentrador = styled.div`
   width: 100%;
@@ -14,7 +12,7 @@ const ContainerCentrador = styled.div`
   align-items: center;
 `;
 
-// Botón Cancelar Edición Estético y Sutil (Tono coral suave)
+
 const BotonCancelar = styled.button`
   background-color: #ffffff;
   color: #b56576; 
@@ -39,9 +37,7 @@ const BotonCancelar = styled.button`
   }
 `;
 
-// ==========================================
-// COMPONENTE PRINCIPAL
-// ==========================================
+
 
 export function FormularioContainer({ productoAEditar, setProductoAEditar, recargarLista }) {
     const [datosForm, setDatosForm] = useState({
@@ -159,7 +155,6 @@ export function FormularioContainer({ productoAEditar, setProductoAEditar, recar
 
     return (
         <ContainerCentrador>
-            {/* Si estamos editando, renderizamos el botón de cancelar estilizado */}
             {productoAEditar && (
                 <BotonCancelar onClick={() => setProductoAEditar(null)}>
                     Cancelar Edición

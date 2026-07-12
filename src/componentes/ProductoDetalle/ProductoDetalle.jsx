@@ -40,7 +40,7 @@ const ProductoDetalle = () => {
                 Agregar {cantidad} al Carrito
             </button>
 
-            {/* Opcional: Si querés mostrarle al usuario cuántos ya tiene guardados en el carrito en total */}
+            
             {cantidadActual > 0 && (
                 <p style={{ fontSize: '12px', color: '#666', marginTop: '5px' }}>
                     Ya tenés {cantidadActual} en el carrito

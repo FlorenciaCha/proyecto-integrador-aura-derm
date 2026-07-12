@@ -10,7 +10,7 @@ const Perfil = () => {
     const navigate = useNavigate();
     const [favoritos, setFavoritos] = useState([]);
 
-    // Cargamos los favoritos que el usuario tiene guardados localmente
+    // Cargar los favoritos que el usuario tiene guardados localmente
     useEffect(() => {
         const favoritosGuardados = JSON.parse(localStorage.getItem(`favoritos_${user?.uid}`)) || [];
         setFavoritos(favoritosGuardados);

@@ -5,9 +5,7 @@ import { Container, Row, Col, Card } from 'react-bootstrap';
 import { FiUsers, FiMapPin, FiLinkedin } from 'react-icons/fi';
 import styled from 'styled-components';
 
-// ==========================================
-// COMPONENTES ESTILIZADOS CORPORATIVOS
-// ==========================================
+
 
 const BrandSection = styled.div`
   background-color: var(--color-secundario);
@@ -152,9 +150,7 @@ const LinkedinButton = styled.a`
   }
 `;
 
-// ==========================================
-// COMPONENTE PRINCIPAL
-// ==========================================
+
 
 function Nosotros({ Mensaje }) {
     const [equipo, setEquipo] = useState([]);
@@ -178,7 +174,7 @@ function Nosotros({ Mensaje }) {
 
     return (
         <Container className="pt-5 mt-4">
-            {/* 1. SECCIÓN DE LA MARCA (Historia e Imagen del Espacio) */}
+            {/*  SECCIÓN DE LA MARCA  */}
             <BrandSection>
                 <Row className="align-items-center">
                     <Col xs={12} lg={6} className="mb-4 mb-lg-0">
@@ -195,7 +191,7 @@ function Nosotros({ Mensaje }) {
                     <Col xs={12} lg={6}>
                         <PlaceImageWrapper>
                             <img 
-                                src="/imagenes/aura-derm.png" // Asegurate de que esta imagen exista en tu carpeta public/imagenes/
+                                src="/imagenes/aura-derm.png" 
                                 alt="Instalaciones de Aura Derm" 
                                 className="place-img" 
                             />
@@ -204,7 +200,7 @@ function Nosotros({ Mensaje }) {
                 </Row>
             </BrandSection>
 
-            {/* 2. SEPARATOR E INTRODUCCIÓN AL STAFF */}
+            {/*SEPARATOR E INTRODUCCIÓN AL STAFF */}
             <SectionSeparator>
                 <h2>Conocé a Nuestro Equipo</h2>
                 <p>
@@ -212,7 +208,7 @@ function Nosotros({ Mensaje }) {
                 </p>
             </SectionSeparator>
 
-            {/* 3. GRILLA DEL EQUIPO DESDE FIRESTORE */}
+            {/* GRILLA DEL EQUIPO DESDE FIRESTORE */}
             <Row className="justify-content-center">
                 {equipo.map(miembro => (
                     <Col key={miembro.id} xs={12} sm={6} lg={3} className="mb-4">

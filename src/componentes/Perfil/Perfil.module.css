@@ -46,13 +46,13 @@
     font-weight: 600;
 }
 
-/* Botón de Logout sutil */
+/* Botón de Logout */
 .botonLogout {
     display: inline-flex;
     align-items: center;
     gap: 8px;
     background-color: transparent;
-    color: #b56576; /* Tono coral suave de tu paleta de eliminación */
+    color: #b56576; 
     border: 1px solid #e5989b;
     padding: 10px 24px;
     border-radius: var(--border-radius-md);

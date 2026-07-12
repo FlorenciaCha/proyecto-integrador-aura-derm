@@ -1,15 +1,17 @@
 import React, { useState } from 'react';
 import styles from './Nav.module.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom'; // Importamos useNavigate
 import { useCart } from '../../../context/CartContext.jsx';  
 import { useAuth } from '../../../context/AuthContext.jsx';
-import { FiMenu, FiX } from 'react-icons/fi'; // Importamos iconos limpios para la hamburguesa
+import { FiMenu, FiX } from 'react-icons/fi'; 
 
 function Nav() {
   const { getCartQuantity } = useCart();
   const totalItems = getCartQuantity(); 
   const { user, logout } = useAuth();
   
+  const navigate = useNavigate(); 
+
   // Estado para controlar si el menú móvil está abierto o cerrado
   const [menuAbierto, setMenuAbierto] = useState(false);
 
@@ -19,6 +21,17 @@ function Nav() {
 
   const cerrarMenu = () => {
     setMenuAbierto(false);
+  };
+
+  // Función manejadora para el cierre de sesión seguro
+  const handleLogout = async () => {
+    try {
+      await logout();    // 1. Ejecuta el cierre de sesión en Firebase/AuthContext
+      cerrarMenu();      // 2. Cierra el menú colapsable si estaba en móvil
+      navigate('/');     // 3. Redirige magnéticamente al usuario a la raíz (Inicio)
+    } catch (error) {
+      console.error("Error al cerrar sesión:", error);
+    }
   };
 
   return (
@@ -76,7 +89,7 @@ function Nav() {
             <div className={styles.userInfoMobile}>
               <span className={styles.userEmail}>Hola, {user.email.split('@')[0]}</span>
               <button 
-                onClick={() => { logout(); cerrarMenu(); }} 
+                onClick={handleLogout} 
                 className="btn btn-outline-light btn-sm rounded-pill px-3 py-1"
                 style={{ color: 'var(--color-terciario)', borderColor: 'var(--color-terciario)' }}
               >

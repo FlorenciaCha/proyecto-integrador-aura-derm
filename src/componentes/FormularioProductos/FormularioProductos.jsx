@@ -5,7 +5,7 @@ export function FormularioProductos({datosForm, manejarCambio, manejarEnvio, man
    
     return(
         <form className={styles.formulario} onSubmit={manejarEnvio}>
-            {/* 2. Contenido Dinámico: Título condicional según el modo */}
+            {/* Contenido Dinámico: Título condicional según el modo */}
             <h3>{modoEdicion ? 'Editar Producto' : 'Agregar Nuevo Producto'}</h3>
             <div className={styles.campo}>
                 <label>ID del producto:</label>
@@ -82,7 +82,7 @@ export function FormularioProductos({datosForm, manejarCambio, manejarEnvio, man
                     className={styles.inputFile}
                 />
                 
-                {/* 3. Mostrar Imagen Actual: Renderizado condicional si estamos editando */}
+               
                 {modoEdicion && datosForm.imagen && (
                     <div className={styles.previewContainer} style={{ marginTop: '10px', textAlign: 'left' }}>
                         <p style={{ fontSize: '0.85rem', color: '#666', marginBottom: '5px' }}>Imagen actual:</p>
@@ -94,7 +94,7 @@ export function FormularioProductos({datosForm, manejarCambio, manejarEnvio, man
                     </div>
                 )}
             </div>
-            {/* 2. Contenido Dinámico: Texto del botón condicional basándose en modoEdicion y cargando */}
+            {/* Contenido Dinámico: Texto del botón condicional basándose en modoEdicion y cargando */}
             <button type="submit" disabled={cargando} className={styles.botonSubmit}>
                 {cargando ? 'Guardando...' : (modoEdicion ? 'Actualizar Producto' : 'Guardar Producto')}
             </button>

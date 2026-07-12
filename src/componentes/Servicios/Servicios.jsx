@@ -119,7 +119,7 @@ function Servicios({ Mensaje }) {
                     <Col key={servicio.id} xs={12} sm={6} lg={4} className="mb-4">
                         <TarjetaServicio>
                             <EnlaceContenedor to={`/servicios/${servicio.id}`}>
-                                {/* Contenedor de Imagen Estético */}
+                                {/* Contenedor de Imagen */}
                                 <div className="img-wrapper">
                                     <img 
                                         src={servicio.imagen || 'https://via.placeholder.com/200'} 
