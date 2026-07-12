@@ -54,14 +54,41 @@
     box-shadow: 0 0 0 3px rgba(75, 95, 80, 0.1); 
 }
 
+
 .inputFile {
     font-family: 'Helvetica', sans-serif;
-    font-size: 0.9rem;
-    padding: 0.4rem 0;
+    font-size: 0.95rem;
+    padding: 0.5rem 0;
     color: var(--text-color);
+    cursor: pointer;
 }
 
 
+.inputFile::file-selector-button {
+    background-color: var(--color-secundario, #eae6df);
+    color: var(--color-terciario, #4b5f50);
+    border: 1px solid var(--color-secundario, #eae6df);
+    padding: 0.6rem 1.2rem;
+    border-radius: var(--border-radius-lg, 8px);
+    font-family: 'Helvetica', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    margin-right: 12px;
+}
+
+
+.inputFile::file-selector-button:hover {
+    background-color: var(--color-terciario, #4b5f50);
+    border-color: var(--color-terciario, #4b5f50);
+    color: #ffffff;
+}
+
+
+.inputFile::file-selector-button:active {
+    transform: scale(0.98);
+}
 .botonSubmit {
     background-color: var(--color-terciario); 
     color: #ffffff;
